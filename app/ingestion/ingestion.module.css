@@ -1,0 +1,230 @@
+.main {
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.header p {
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.step {
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  background: var(--card-border);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.connector {
+  height: 2px;
+  width: 40px;
+  background: var(--card-border);
+}
+
+.uploadGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .uploadGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.uploadZone {
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  border: 2px dashed var(--card-border);
+  background: var(--glass-bg);
+  transition: all 0.2s ease;
+}
+
+.uploadZone:hover {
+  border-color: var(--primary-color);
+  background: rgba(14, 165, 233, 0.05);
+  transform: translateY(-4px);
+}
+
+.iconCircle {
+  width: 64px;
+  height: 64px;
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.uploadPrompt h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.uploadPrompt p {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.processing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brainIcon {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background: var(--card-border);
+  border-radius: 3px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  width: 60%;
+  background: var(--primary-color);
+  border-radius: 3px;
+  animation: progress 2.5s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.mappingHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mappingTable, .excelMapping {
+  margin-bottom: 2rem;
+}
+
+.mappingRow {
+  display: grid;
+  grid-template-columns: 200px 1fr 100px;
+  padding: 1rem;
+  border-bottom: 1px solid var(--card-border);
+  align-items: center;
+  gap: 1rem;
+}
+
+.excelMapping .mappingRow {
+  grid-template-columns: 200px 1fr;
+}
+
+.mappingRow span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.tag {
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.confidence {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+
+.select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.mappingInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #3b82f6;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.successCard {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.successIcon {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.auditNote {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-family: var(--font-geist-mono);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}

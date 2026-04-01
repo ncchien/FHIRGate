@@ -1,0 +1,104 @@
+.container {
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.header h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.header p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.textareaWrapper {
+  position: relative;
+  margin-top: 1.25rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  background: var(--background);
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.listeningIndicator {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--danger);
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+}
+
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.micBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.micBtn.active {
+  background: var(--danger);
+  animation: jitter 0.2s infinite alternate;
+}
+
+@keyframes jitter {
+  from { transform: translateX(-1px); }
+  to { transform: translateX(1px); }
+}
+
+.micBtn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}

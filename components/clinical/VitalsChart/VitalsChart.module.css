@@ -1,0 +1,42 @@
+.chartContainer {
+  margin-top: 2rem;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.chartWrapper {
+  margin-left: -20px;
+}
+
+.legend {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dotBp {
+  width: 10px;
+  height: 10px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+.dotHr {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--danger);
+  border-radius: 50%;
+}
