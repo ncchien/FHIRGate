@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  hapi-fhir-jpaserver:
+    image: hapiproject/hapi-fhir-jpaserver-starter:latest
+    container_name: fhirgate-hapi-server
+    ports:
+      - "8090:8080"
+    environment:
+      - HAPI_FHIR_URL_SERVER_BASE=http://localhost:8090/fhir
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://fhir-db:5432/fhirgate
+      - SPRING_DATASOURCE_USERNAME=fhirgate
+      - SPRING_DATASOURCE_PASSWORD=fhirgate
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQLDialect
+      - HAPI_FHIR_FHIR_VERSION=R4
+    depends_on:
+      - fhir-db
+    restart: always
+
+  fhir-db:
+    image: postgres:15
+    container_name: fhirgate-db
+    environment:
+      - POSTGRES_DB=fhirgate
+      - POSTGRES_USER=fhirgate
+      - POSTGRES_PASSWORD=fhirgate
+    volumes:
+      - fhir_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  fhir_data:
